@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inventario de Accesorios</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <link rel="icon" href="logo.jpg" type="logo/png" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    /* Opcional: transición para que la ocultación se vea más suave */
+    .secciones-nav {
+      transition: opacity 0.3s ease, height 0.3s ease;
+      overflow: hidden;
+    }
+    .secciones-nav.oculto {
+      opacity: 0;
+      height: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="animate__animated animate__fadeInDown">
+    <h1>Inventario de Pantallas</h1>
+    <input
+      type="text"
+      id="buscador"
+      placeholder="Buscar por nombre, marca o modelo..." />
+    <nav class="secciones-nav" id="navSecciones">
+   
+ 
+      <button onclick="mostrarSeccion('pantallas-iphone')">Pantallas iPhone</button>
+      <button onclick="mostrarSeccion('pantallas-samsung')">Pantallas Samsung</button>
+      <button onclick="mostrarSeccion('pantallas-motorola')">Pantallas Motorola</button>
+      <button onclick="mostrarSeccion('pantallas-lg')">Pantallas LG</button>
+      <button onclick="mostrarSeccion('pantallas-huawei')">Pantallas Huawei</button>
+      <button onclick="mostrarSeccion('pantallas-honor')">Pantallas Honor</button>
+      <button onclick="mostrarSeccion('pantallas-hisense')">Pantallas Hisense</button>
+      <button onclick="mostrarSeccion('pantallas-xiaomi')">Pantallas Xiaomi</button>
+      <button onclick="mostrarSeccion('pantallas-realme')">Pantallas Realme</button>
+      <button onclick="mostrarSeccion('pantallas-tcl')">Pantallas TCL</button>
+      <button onclick="mostrarSeccion('pantallas-zte')">Pantallas ZTE</button>
+    </nav>
+  </header>
+
+
+<script>
+  const buscador = document.getElementById("buscador");
+  const navSecciones = document.getElementById("navSecciones");
+
+  // Oculta los botones al escribir en el buscador
+  buscador.addEventListener("input", () => {
+    navSecciones.classList.toggle("oculto", buscador.value.trim().length > 0);
+  });
+
+  let ultimoScroll = window.scrollY;
+  let scrollTimeout;
+
+  window.addEventListener("scroll", () => {
+    const scrollActual = window.scrollY;
+
+    // Si el usuario hace scroll hacia abajo, ocultar
+    if (scrollActual > ultimoScroll) {
+      navSecciones.classList.add("oculto");
+    }
+
+    // Si se detiene o sube, mostrar con retardo para evitar parpadeos
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      if (scrollActual <= ultimoScroll) {
+        navSecciones.classList.remove("oculto");
+      }
+      ultimoScroll = scrollActual;
+    }, 150); // tiempo en milisegundos (ajustable)
+  });
+
+  function mostrarSeccion(id) {
+    alert("Mostrando productos de " + id);
+  }
+</script>
+
+
+
+
+
+    <!-- Pantallas Honor -->
+    <section class="brand-section" id="pantallas-honor">
+      <h2>Pantallas Honor</h2>
+      <div class="products-grid">
+      <article class="product-card" style="position:relative;overflow:hidden;"><div style="position:absolute;top:10px;left:10px;background:red;color:white;padding:5px 10px;font-weight:bold;font-size:14px;border-radius:5px;z-index:1;animation:pulse 1.2s infinite;">AGOTADO</div><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Honor_logo.svg" alt="Logo Honor" class="brand-logo" /><p class="product-name">HUAWEI HONOR 10 LITE</p><p class="product-price">$280</p></article>
+      <article class="product-card" style="position:relative;overflow:hidden;"><div style="position:absolute;top:10px;left:10px;background:red;color:white;padding:5px 10px;font-weight:bold;font-size:14px;border-radius:5px;z-index:1;animation:pulse 1.2s infinite;">AGOTADO</div><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Honor_logo.svg" alt="Logo Honor" class="brand-logo" /><p class="product-name">HUAWEI HONOR 8 A</p><p class="product-price">$280</p></article>
+      <article class="product-card" style="position:relative;overflow:hidden;"><div style="position:absolute;top:10px;left:10px;background:red;color:white;padding:5px 10px;font-weight:bold;font-size:14px;border-radius:5px;z-index:1;animation:pulse 1.2s infinite;">AGOTADO</div><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Honor_logo.svg" alt="Logo Honor" class="brand-logo" /><p class="product-name">HUAWEI HONOR 8X</p><p class="product-price">$280</p></article>
+      <style>@keyframes pulse{0%{transform:scale(1);opacity:1;}50%{transform:scale(1.1);opacity:0.7;}100%{transform:scale(1);opacity:1;}}</style>
+
+      </div>
+    </section>
+    <!-- Pantallas Hisense -->
+    <section class="brand-section" id="pantallas-hisense">
+      <h2>Pantallas Hisense</h2>
+      <div class="products-grid">
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Hisense_logo.svg" alt="Logo Hisense" class="brand-logo" /><p class="product-name">HISENSE E60 LITE</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Hisense_logo.svg" alt="Logo Hisense" class="brand-logo" /><p class="product-name">HISENSE E50</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Hisense_logo.svg" alt="Logo Hisense" class="brand-logo" /><p class="product-name">HISENSE H40 LITE</p><p class="product-price">$270</p></article>
+      </div>
+    </section>
+    <!-- Pantallas Xiaomi -->
+    <section class="brand-section" id="pantallas-xiaomi">
+      <h2>Pantallas Xiaomi</h2>
+      <div class="products-grid">
+        <article class="product-card" style="position:relative;overflow:hidden;"><div style="position:absolute;top:10px;left:10px;background:red;color:white;padding:5px 10px;font-weight:bold;font-size:14px;border-radius:5px;z-index:1;animation:pulse 1.2s infinite;">AGOTADO</div><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI NOTE 9</p><p class="product-price">$280</p></article>
+<article class="product-card" style="position:relative;overflow:hidden;"><div style="position:absolute;top:10px;left:10px;background:red;color:white;padding:5px 10px;font-weight:bold;font-size:14px;border-radius:5px;z-index:1;animation:pulse 1.2s infinite;">AGOTADO</div><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI NOTE 8</p><p class="product-price">$250</p></article>
+
+
+        <article class="product-card"   ><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI NOTE 7</p><p class="product-price">$280</p></article>
+        <article class="product-card"   ><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI RENO 7 OLED</p><p class="product-price">$850</p></article>
+        <article class="product-card"   ><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI RENO 6 LITE OLED</p><p class="product-price">$680</p></article>
+        <article class="product-card"   ><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI RENO 5 LITE OLED</p><p class="product-price">$680</p></article>
+        <article class="product-card"   ><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI RENO 5 LITE INCELL</p><p class="product-price">$290</p></article>
+        <article class="product-card"   ><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI 12</p><p class="product-price">$350</p></article>
+        <article class="product-card"   ><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI 10C</p><p class="product-price">$280</p></article>
+        <article class="product-card">  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI 10 A</p><p class="product-price">$270</p></article>
+        <article class="product-card">  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI 9 A</p><p class="product-price">$270</p></article>
+        <article class="product-card">  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI 9T</p><p class="product-price">$280</p></article>
+        <article class="product-card">  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI 9 A C/M</p><p class="product-price">$290</p></article>
+        <article class="product-card">  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">POCO M4 PRO</p><p class="product-price">$260</p></article>
+        <article class="product-card">  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">POCO F3</p><p class="product-price">$280</p></article>
+        <article class="product-card">  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">POCO M3</p><p class="product-price">$290</p></article>
+        <article class="product-card">  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">POCO X3 PRO</p><p class="product-price">$430</p></article>
+      </div>
+    </section>
+    <!-- Pantallas Realme -->
+    <section class="brand-section" id="pantallas-realme">
+      <h2>Pantallas Realme</h2>
+      <div class="products-grid">
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Realme_logo.svg" alt="Logo Realme" class="brand-logo" /><p class="product-name">REALME C21</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Realme_logo.svg" alt="Logo Realme" class="brand-logo" /><p class="product-name">REALME C21Y</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Realme_logo.svg" alt="Logo Realme" class="brand-logo" /><p class="product-name">REALME C20</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Realme_logo.svg" alt="Logo Realme" class="brand-logo" /><p class="product-name">REALME C15</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Realme_logo.svg" alt="Logo Realme" class="brand-logo" /><p class="product-name">REALME C11</p><p class="product-price">$270</p></article>
+      </div>
+    </section>
+    <!-- Pantallas TCL -->
+    <section class="brand-section" id="pantallas-tcl">
+      <h2>Pantallas TCL</h2>
+      <div class="products-grid">
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/TCL_logo.svg" alt="Logo TCL" class="brand-logo" /><p class="product-name">TCL 30SE</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/TCL_logo.svg" alt="Logo TCL" class="brand-logo" /><p class="product-name">TCL 20SE</p><p class="product-price">$300</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/TCL_logo.svg" alt="Logo TCL" class="brand-logo" /><p class="product-name">TCL 20E</p><p class="product-price">$280</p></article>
+      </div>
+    </section>
+    <!-- Pantallas ZTE -->
+    <section class="brand-section" id="pantallas-zte">
+      <h2>Pantallas ZTE</h2>
+      <div class="products-grid">
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ZTE_logo.svg" alt="Logo ZTE" class="brand-logo" /><p class="product-name">ZTE A7S</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ZTE_logo.svg" alt="Logo ZTE" class="brand-logo" /><p class="product-name">ZTE A51</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ZTE_logo.svg" alt="Logo ZTE" class="brand-logo" /><p class="product-name">ZTE A52 LITE</p><p class="product-price">$260</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ZTE_logo.svg" alt="Logo ZTE" class="brand-logo" /><p class="product-name">ZTE V41</p><p class="product-price">$260</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ZTE_logo.svg" alt="Logo ZTE" class="brand-logo" /><p class="product-name">ZTE A53</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ZTE_logo.svg" alt="Logo ZTE" class="brand-logo" /><p class="product-name">ZTE L8</p><p class="product-price">$260</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ZTE_logo.svg" alt="Logo ZTE" class="brand-logo" /><p class="product-name">ZTE A71</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ZTE_logo.svg" alt="Logo ZTE" class="brand-logo" /><p class="product-name">ZTE A7</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ZTE_logo.svg" alt="Logo ZTE" class="brand-logo" /><p class="product-name">ZTE A5</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ZTE_logo.svg" alt="Logo ZTE" class="brand-logo" /><p class="product-name">ZTE V10</p><p class="product-price">$360</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ZTE_logo.svg" alt="Logo ZTE" class="brand-logo" /><p class="product-name">ZTE V10 VITA</p><p class="product-price">$280</p></article>
+      </div>
+    </section>
+    </section>
+      </div>
+    </section>
+    <!-- Pantallas iPhone -->
+    <section class="brand-section" id="pantallas-iphone">
+      <h2>Pantallas iPhone</h2>
+      <div class="products-grid">
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" height="10"  class="brand-logo" /><p class="product-name">IPHONE 13 INCELL</p><p class="product-price">$950</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 13 OLED</p><p class="product-price">$1150</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 12 PRO MAX INCELL</p><p class="product-price">$780</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 12 PRO MAX OLED</p><p class="product-price">$1150</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 12 MINI INCELL</p><p class="product-price">$550</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 11 PRO MAX INCELL</p><p class="product-price">$400</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 11 PRO MAX OLED</p><p class="product-price">$800</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 11 PRO ORIGINAL</p><p class="product-price">$620</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 11</p><p class="product-price">$310</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE XR</p><p class="product-price">$310</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE XS MAX</p><p class="product-price">$640</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE XS OLED</p><p class="product-price">$520</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE XS INCELL</p><p class="product-price">$320</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE X</p><p class="product-price">$540</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 8 PLUS</p><p class="product-price">$220</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 8G</p><p class="product-price">$200</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 7 PLUS</p><p class="product-price">$230</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 7G</p><p class="product-price">$200</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 6 PLUS</p><p class="product-price">$200</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 6G</p><p class="product-price">$180</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo iPhone" class="brand-logo" /><p class="product-name">IPHONE 6S</p><p class="product-price">$200</p></article>
+      </div>
+    </section>
+    <!-- Pantallas Samsung -->
+    <section class="brand-section" id="pantallas-samsung">
+      <h2>Pantallas Samsung</h2>
+      <div class="products-grid">
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A72 OLED</p><p class="product-price">$630</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A71</p><p class="product-price">$450</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A70 INCELL</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A70 C/M OLED</p><p class="product-price">$450</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A52 INCELL</p><p class="product-price">$370</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A51 INCELL</p><p class="product-price">$350</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A51 C/M</p><p class="product-price">$530</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A50 C/M</p><p class="product-price">$490</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A50 INCELL</p><p class="product-price">$320</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A34 OLED</p><p class="product-price">$690</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A34 INCELL</p><p class="product-price">$420</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A33</p><p class="product-price">$490</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A32 C/M</p><p class="product-price">$540</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A32</p><p class="product-price">$480</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A31 C/M</p><p class="product-price">$460</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A31 INCELL</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A30S</p><p class="product-price">$440</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A30S INCELL</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A30 C/M</p><p class="product-price">$470</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A30</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A23</p><p class="product-price">$320</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A22 C/M</p><p class="product-price">$310</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A22</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A21S C/M</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A21S</p><p class="product-price">$260</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A21</p><p class="product-price">$300</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A20 C/M OLED</p><p class="product-price">$460</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A20 INCELL</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A20S</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A20 OLED</p><p class="product-price">$460</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A20 C/M</p><p class="product-price">$460</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A20 INCELL</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A14 4G</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A14 5G</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A13 5G</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A13 4G</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A12</p><p class="product-price">$260</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A12 C/M</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A11</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A10S C/M</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A10S</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A10E</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A10 C/M</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A7 Oled</p><p class="product-price">$490</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A04S</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A04E</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNGA04</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A03</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A03 CORE</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A03S</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A02S</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A02S C/M</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A02</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A01 CORE</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG A01F</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG J7 PRIME</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG J7</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG J7 PRO</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG J600</p><p class="product-price">$240</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG J4 PLUS</p><p class="product-price">$240</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Logo Samsung" class="brand-logo" /><p class="product-name">SAMSUNG J4</p><p class="product-price">$240</p></article>
+      </div>
+    </section>
+    <!-- Pantallas Motorola -->
+    <section class="brand-section" id="pantallas-motorola">
+      <h2>Pantallas Motorola</h2>
+      <div class="products-grid">
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G62</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G60</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G52</p><p class="product-price">$310</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G51</p><p class="product-price">$310</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G50 5G</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G50 4G</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G42</p><p class="product-price">$450</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G41 OLED</p><p class="product-price">$510</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G41 INCELL</p><p class="product-price">$310</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G32</p><p class="product-price">$320</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G31 OLED</p><p class="product-price">$510</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G31 INCELL</p><p class="product-price">$410</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G30</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G23</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G22</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G20</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G13</p><p class="product-price">$260</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G10</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G9 PLUS</p><p class="product-price">$350</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G9 PLAY</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G9 POWER</p><p class="product-price">$200</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G8</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G8 PLUS</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G8 POWER</p><p class="product-price">$320</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G8 PLAY</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G8 POWER LITE</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G7 PLUS</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G7 PLAY</p><p class="product-price">$260</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G7 POWER</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G6 PLUS</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G6 PLAY</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G5 PLUS</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO G POWER</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO ONE</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO ONE C/M</p><p class="product-price">$350</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO ONE ZOOM</p><p class="product-price">$450</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO ONE MACRO</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO ONE HYPER</p><p class="product-price">$260</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO ONE FUSSION PLUS</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO ONE VISION</p><p class="product-price">$600</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E40</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E32</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E30</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E22</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E20</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E13</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E7</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E7 PLUS</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E7i</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E7 POWER</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E6i</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E6S</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E6 PLUS</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E6 PLAY</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E5 PLAY</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO E5 PLUS</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO Z4</p><p class="product-price">$750</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO Z3 PLAY OLED</p><p class="product-price">$550</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO Z2 PLAY</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO STYLUS</p><p class="product-price">$390</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Motorola_logo.svg" alt="Logo Motorola" class="brand-logo" /><p class="product-name">MOTO EDGE 20 LITE</p><p class="product-price">$850</p></article>
+      </div>
+    </section>
+    <!-- Pantallas LG -->
+    <section class="brand-section" id="pantallas-lg">
+      <h2>Pantallas LG</h2>
+      <div class="products-grid">
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/LG_logo_%282015%29.svg" alt="Logo LG" class="brand-logo" /><p class="product-name">LG STYLUS</p><p class="product-price">$390</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/LG_logo_%282015%29.svg" alt="Logo LG" class="brand-logo" /><p class="product-name">LG K52</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/LG_logo_%282015%29.svg" alt="Logo LG" class="brand-logo" /><p class="product-name">LG K51</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/LG_logo_%282015%29.svg" alt="Logo LG" class="brand-logo" /><p class="product-name">LG K51S</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/LG_logo_%282015%29.svg" alt="Logo LG" class="brand-logo" /><p class="product-name">LG K61</p><p class="product-price">$310</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/LG_logo_%282015%29.svg" alt="Logo LG" class="brand-logo" /><p class="product-name">LG K71</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/LG_logo_%282015%29.svg" alt="Logo LG" class="brand-logo" /><p class="product-name">LG K42</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/LG_logo_%282015%29.svg" alt="Logo LG" class="brand-logo" /><p class="product-name">LG K41S</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/LG_logo_%282015%29.svg" alt="Logo LG" class="brand-logo" /><p class="product-name">LG K22</p><p class="product-price">$290</p></article>
+      </div>
+    </section>
+    <!-- Pantallas Huawei -->
+    <section class="brand-section" id="pantallas-huawei">
+      <h2>Pantallas Huawei</h2>
+      <div class="products-grid">
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y70</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y60</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y9 2019 COF</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y9 2019</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y9 PRIME COF</p><p class="product-price">$340</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y9 PRIME</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y9S</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y9A</p><p class="product-price">$360</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y9 2018</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y7 2019</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y7 2018</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y7 P</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y7 A</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y6 2019</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y6 2018</p><p class="product-price">$260</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y6 P</p><p class="product-price">$260</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y6 S</p><p class="product-price">$260</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y5P</p><p class="product-price">$320</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y5 2019</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI Y5 2018</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI MATE 20 LITE</p><p class="product-price">$280</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI MATE 20 LEICA</p><p class="product-price">$390</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI NOVA 8i</p><p class="product-price">$320</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI NOVA 5T</p><p class="product-price">$290</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI NOVA 3</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI P SMART 2019</p><p class="product-price">$270</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI P SMART</p><p class="product-price">$250</p></article>
+        <article class="product-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Huawei_logo.svg" alt="Logo Huawei" class="brand-logo" /><p class="product-name">HUAWEI P40 LITE</p><p class="product-price">$320</p></article>
+      </div>
+    </section>
+  </main>
+  <script src="buscador.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4faff;
+  color: #222;
+  line-height: 1.7;
+  padding-bottom: 60px;
+  scroll-behavior: smooth;
+  transition: background 0.5s ease;
+}
+
+/* Header */
+header {
+  background-color: #0d1b3d;
+  color: #e0e7ff;
+  padding: 24px 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  box-shadow: 0 4px 18px rgba(0, 255, 255, 0.3);
+  animation: fadeInDown 1s ease;
+}
+
+header h1 {
+  margin-bottom: 12px;
+  font-weight: 800;
+  font-size: 2.4rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  border-bottom: 2px solid #00c6ff;
+  display: inline-block;
+  padding-bottom: 8px;
+  animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+  0% { text-shadow: 0 0 8px #00c6ff; }
+  100% { text-shadow: 0 0 20px #00c6ff, 0 0 40px #00c6ff; }
+}
+
+header input[type="text"] {
+  padding: 12px 15px;
+  width: 65%;
+  max-width: 420px;
+  border-radius: 8px;
+  border: 2px solid #00c6ff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+header input[type="text"]:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 10px #00c6ff;
+}
+
+header button {
+  padding: 12px 28px;
+  margin-left: 14px;
+  background: linear-gradient(90deg, #007BFF 0%, #00c6ff 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+header button:hover {
+  background: linear-gradient(90deg, #0056b3 0%, #007BFF 100%);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 86, 179, 0.5);
+}
+
+/* Navegación de secciones */
+.secciones-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px 0 16px 0;
+}
+
+.secciones-nav button {
+  background: linear-gradient(90deg, #007BFF 60%, #00c6ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.4);
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s, background 0.4s;
+}
+
+.secciones-nav button:hover {
+  background: linear-gradient(90deg, #0056b3 60%, #007BFF 100%);
+  transform: scale(1.12) translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 86, 179, 0.5);
+}
+
+@media (max-width: 600px) {
+  .secciones-nav {
+    gap: 10px;
+  }
+  .secciones-nav button {
+    padding: 10px 18px;
+    font-size: 1rem;
+  }
+}
+
+/* Contenedor principal */
+.inventario-container {
+  padding: 28px 24px;
+  max-width: 1280px;
+  margin: auto;
+}
+
+/* Secciones de marca */
+.marca {
+  margin-bottom: 48px;
+  padding: 20px 24px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.12);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.marca:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0, 123, 255, 0.25);
+}
+
+.marca h2 {
+  margin-bottom: 22px;
+  border-left: 6px solid #007BFF;
+  padding-left: 14px;
+  color: #0056b3;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* Categorías de productos */
+.categoria {
+  margin-bottom: 28px;
+}
+
+.categoria h3 {
+  margin-bottom: 14px;
+  color: #444;
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+}
+
+/* Producto individual */
+.producto {
+  background: #fafcff;
+  border: 1.8px solid #d1e7ff;
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 3px 12px rgba(0, 123, 255, 0.12);
+  cursor: pointer;
+}
+
+.producto:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+.producto img {
+  width: 100px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Tarjetas */
+.brand-section {
+  background-color: #ffffff;
+  padding: 28px 28px 36px 28px;
+  border-radius: 22px;
+  margin-top: 48px;
+  box-shadow: 0 12px 36px rgba(0, 123, 255, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.brand-section:hover {
+  box-shadow: 0 18px 48px rgba(0, 123, 255, 0.3);
+}
+
+.brand-section h2 {
+  color: #001f4d;
+  margin-bottom: 28px;
+  border-bottom: 3px solid #007BFF;
+  padding-bottom: 8px;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.03em;
+}
+
+/* Grid productos */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 22px;
+}
+
+.product-card {
+  background-color: #f9fbff;
+  border: 1.5px solid #cbdffb;
+  border-radius: 18px;
+  padding: 16px 14px 24px 14px;
+  text-align: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 0 14px rgba(0, 123, 255, 0.08);
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 10px 32px rgba(0, 123, 255, 0.3);
+}
+
+.product-card img.brand-logo {
+  height: 48px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.07));
+}
+
+.product-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #0a2540;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.product-price {
+  color: #007BFF;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 123, 255, 0.3);
+}
+
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.agotado-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 5px;
+  z-index: 1;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}

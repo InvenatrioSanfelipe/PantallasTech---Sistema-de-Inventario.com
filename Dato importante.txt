@@ -1,0 +1,11 @@
+
+
+<article class="product-card" // qui poderla  style="position:relative;overflow:hidden;"><div style="position:absolute;top:10px;left:10px;background:red;color:white;padding:5px 10px;font-weight:bold;font-size:14px;border-radius:5px;z-index:1;animation:pulse 1.2s infinite;">AGOTADO</div>   // aqui se cierra  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Logo Xiaomi" class="brand-logo" /><p class="product-name">REDMI NOTE 9</p><p class="product-price">$280</p></article>
+
+
+
+
+
+
+
+style="position:relative;overflow:hidden;"><div style="position:absolute;top:10px;left:10px;background:red;color:white;padding:5px 10px;font-weight:bold;font-size:14px;border-radius:5px;z-index:1;animation:pulse 1.2s infinite;">AGOTADO</div>
